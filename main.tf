@@ -133,7 +133,7 @@ apt-get -y install nginx
 rm -rf /var/www/html/*
 
 # Download the index.html from your personal website and place it in the nginx directory
-curl -o /var/www/html/index.html https://sharanyagprasad.github.io/
+curl -o /var/www/html/index.html https://www.supreethmv.com/
 
 # Restart nginx to apply the changes
 systemctl restart nginx
