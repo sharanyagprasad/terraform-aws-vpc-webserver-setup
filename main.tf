@@ -6,7 +6,12 @@ terraform {
       version = "~> 5.0"
     }
   }
-}
+  backend "s3" {
+    bucket = "sharanya-terraform-webserver"
+    key= "terraform.tfstate"
+    region = "eu-central-1"
+  }
+}   
 
 provider "aws" {
   region = "eu-central-1"
@@ -16,7 +21,7 @@ resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
 
   tags = {
-    Name = "CloudAcademy"
+    Name = "Sharanya-VPC"
     Demo = "Terraform"
   }
 }
@@ -48,7 +53,7 @@ resource "aws_internet_gateway" "main" {
 
   tags = {
     "Name"  = "Main"
-    "Owner" = "CloudAcademy"
+    "Owner" = "Sharanya"
   }
 }
 
